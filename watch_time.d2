@@ -1,0 +1,62 @@
+description: |md
+# State Diagram for watch_time.sh
+## Four States of the Alarm
+### 0 initial
+### 1 running
+### 2 expired
+### 3 canceled
+
+## Enable / Disable
+### When disable
+All state information is preserved
+### When enabled
+The alarm will it will carry on from where it left off.
+|
+
+# enabled.shape: oval
+enabled: {
+  yes: {
+  }
+  no: {
+  }
+
+  yes <-> no
+}
+
+
+state: {
+  expired-2: {
+
+    ringing.shape: oval
+    not ringing.shape: oval
+    not ringing: {}
+    ringing: {}
+  }
+  expired-2 -> initial-0
+  initial-0 -> running-1: create
+  canceled-3 -> running-1: create 
+  running-1 -> expired-2
+  running-1 <- expired-2: create
+  running-1 -> canceled-3
+  canceled-3 -> initial-0
+  # running-1 <- canceled-3: create
+}
+
+enabled.yes -> state
+state -> enabled.no
+
+# parent.not enabled -> parent.enabled
+# parent.enabled -> parent.not enabled
+# parent.enabled -> initial - 0
+# parent.enabled -> running - 1: create
+# initial - 0 -> running - 1: create
+#
+# running - 1 -> canceled - 3
+# running - 1 -> expired - 2
+#
+# expired - 2 .ringing
+# expired - 2 .not ringing
+# expired - 2 -> running - 1: create
+#
+# canceled - 3 -> running - 1: create
+
