@@ -1,3 +1,10 @@
+commit 525284d
+
+version: 0.0.2
+
+- first commit
+--- Contents above this line were committed in version: 0.0.1 ---
+
 commit 2f37203
 
 version: 0.0.1
