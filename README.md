@@ -87,45 +87,51 @@ While the program is running, these key presses are available:
 
 Linux Installation (using /home/david/src/bash/watch_time) directory as an example
 
-    0. Create an install directory
+0. Create an install directory
 
-    1. Put the source files in an install directory
+1. Put the source files in an install directory
 
-        Install Directoy should look like this:
+Install Directoy should look like this:
 
-        david@arch ~/src/bash/watch_time]$ tree
-        .
-        ├── assets
-        │   ├── icon_alarm.png
-        │   ├── phone-incoming-call.oga
-        │   └── suspend-error.oga
-        ├── lib_ini.sh
-        ├── var
-        │   ├── log.txt
-        │   ├── notes.md
-        ├── watch_time.cfg
-        ├── watch_time.d2
-        ├── watch_time.sh
-        └── watch_time.svg
+    .
+    ├──  assets
+    │  ├──  icon_alarm.png
+    │  ├──  phone-incoming-call.oga
+    │  └──  suspend-error.oga
+    ├──  var
+    │  ├──  debug.txt
+    │  ├──  log.txt
+    │  └──  notes.md
+    ├──  CHANGE_LOG
+    ├──  GIT_MSG
+    ├──  lib_alarm.sh
+    ├──  lib_clock.sh
+    ├──  lib_ini.sh
+    ├──  lib_time.sh
+    ├──  README.md
+    ├──  watch_time.cfg
+    ├──  watch_time.d2
+    ├──  watch_time.sh
+    └──  watch_time.svg
 
-        3 directories, 11 files
 
-### Execution of script
+### Execution of Script
 
-    1. Ensure that the script 'watch_time.sh' is executable
+1. Ensure that the script 'watch_time.sh' is executable
 
-        $ chmod +x watch_time.sh
+    $ chmod +x watch_time.sh
 
-    2. Ensure that the directory is on the execution path (edit .bashrc)
+2. Ensure that the directory is on the execution path (edit .bashrc)
 
-    3. Option: Create a convenient alias
+3. Option: Create a convenient alias
 
-    ... edit .bashrc or equivalent
+... 
+    edit .bashrc or equivalent
     export PATH=/home/david/src/bash/watch_time:$PATH
     alias wt="watch_time.sh"
-    ...
+...
 
-    or place a symbolic link in '$HOME/.local/bin'
+or place a symbolic link in '$HOME/.local/bin'
 
 ### Resource Files
 
@@ -165,8 +171,10 @@ The sound file needs to be located in "<install-directory>/assets"
 
     - Common Examples:
 
+```
         export EDITOR=vim
         export EDITOR=nano
+```
 
 ## Complete Shell configuration changes (eg. .bashrc)
 
@@ -211,11 +219,11 @@ Example
 
 6. Example
 
+```
    # start the program with no parameters
-
    $ watch_time.sh
-
    # Press letter 't' and follows prompts for input.
+```
 
 ## Future Enhancements
 

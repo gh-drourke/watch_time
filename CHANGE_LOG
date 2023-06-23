@@ -1,3 +1,9 @@
+commit 3e2780b
+
+version: 0.0.3
+
+- docs: update to README.md
+
 commit 525284d
 
 version: 0.0.2
